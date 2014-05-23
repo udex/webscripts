@@ -21,7 +21,7 @@ def get_url(argv):
             help_message = "Reveal full url form its shorten form made by t.com etc.\n\n\
             \roptions:\n\
             \r  -h, --help     Display this message\n\
-            \r  -u -url <URL>  Show target url"
+            \r  -u, -url <URL>  Show target url"
             print help_message
             sys.exit()
         elif opt in ("-u", "--url"):
