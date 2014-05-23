@@ -48,8 +48,8 @@ if __name__ == "__main__":
                                               # the first and the last ones
             string_to_format = "\n  * ".join(["{" + str(n) + "}" for n in range(length)])
             redirections = "  * " + string_to_format.format(*result["urls"][1:-1])
-            print "Your url {0} refers to {1} through {2} jumps (redirections)\
-            which are: \n{3}:".format(short_url, result['end_url'], result["redirects"], redirections)
+            print "Your url {0} refers to {1} through {2} jumps (redirections) which are:\
+                  \r\n{3}".format(short_url, result['end_url'], result["redirects"], redirections)
     elif result["status"] == "TooManyRedirects":
         print "There is too may redirects (more than 10) so target url is not safe to reach"
     elif result["status"] == "InvalidURL":
