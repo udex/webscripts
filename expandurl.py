@@ -1,9 +1,13 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import json, sys, getopt, urllib2
+import json
+import sys
+import getopt
+import urllib2
 
 expand_api_url = "http://expandurl.appspot.com/expand?url="
+
 
 def get_url(argv):
     url = ""
@@ -15,9 +19,9 @@ def get_url(argv):
     for opt, arg in opts:
         if opt in ("-h", "--help"):
             help_message = "Reveal full url form its shorten form made by t.com etc.\n\n\
-options:\n\
- -h, --help     Display this message\n\
- -u -url <URL>  Show target url"
+            \roptions:\n\
+            \r  -h, --help     Display this message\n\
+            \r  -u -url <URL>  Show target url"
             print help_message
             sys.exit()
         elif opt in ("-u", "--url"):
@@ -33,5 +37,3 @@ if __name__ == "__main__":
         print result['end_url']
     else:
         print "Something went wrong, url cannot be revealed"
-
-
