@@ -11,18 +11,22 @@ expand_api_url = "http://expandurl.appspot.com/expand?url="
 
 def get_url(argv):
     url = ""
+    short_message = "usage: expandurl.py -u <URL>, type -h or --help for more information."
+    full_message = "Reveal full url form its shorten form made by t.com etc.\n\n\
+    \roptions:\n\
+    \r  -h, --help        Display this message\n\
+    \r  -u, --url <URL>   Show target url"
     try:
         opts, args = getopt.getopt(argv, "hu:", ["help", "url="])
     except getopt.GetoptError:
-        print "usage: expandurl.py -u <URL>, type -h or --help for more information."
+        print short_message
+        sys.exit(2)
+    if len(opts) == 0:
+        print short_message
         sys.exit(2)
     for opt, arg in opts:
         if opt in ("-h", "--help"):
-            help_message = "Reveal full url form its shorten form made by t.com etc.\n\n\
-            \roptions:\n\
-            \r  -h, --help     Display this message\n\
-            \r  -u, --url <URL>  Show target url"
-            print help_message
+            print full_message
             sys.exit()
         elif opt in ("-u", "--url"):
             url = arg
