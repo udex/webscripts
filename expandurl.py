@@ -35,5 +35,7 @@ if __name__ == "__main__":
     result = json.loads(res_json)
     if result["status"] == "OK":
         print result['end_url']
+    elif result["status"] == "InvalidURL":
+        print "URL is invalid, check it and try again"
     else:
         print "Something went wrong, url cannot be revealed"
